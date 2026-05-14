@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- 
+    Declaração DOCTYPE: Informa ao navegador que este documento segue o padrão HTML5
+    Isso garante que o navegador renderize a página no modo padrão (não quirks mode)
+-->
+
+<html lang="pt-BR">
+<!-- 
+    Tag raiz do documento HTML
+    lang="pt-BR": Define o idioma da página como Português do Brasil
+    - Importante para acessibilidade (leitores de tela)
+    - Ajuda mecanismos de busca (SEO)
+-->
+
+<!-- ============================================
+     INÍCIO DO CABEÇALHO (HEAD)
+     ============================================ -->
+
+<head>
+    <!-- 
+        meta charset="UTF-8": Define a codificação de caracteres como UTF-8
+        - Suporta acentuação, emojis e caracteres especiais
+        - Essencial para exibir corretamente textos em português
+    -->
+    <meta charset="UTF-8">
+    
+    <!-- 
+        Título da página: Aparece na aba do navegador e nos resultados de busca
+        - Importante para SEO e identificação da página
+    -->
+    <title>Trabalho Miguel - Organizado</title>
+    
+    <!-- 
+        meta viewport: Controla como a página é exibida em dispositivos móveis
+        - width=device-width: Largura igual à largura da tela do dispositivo
+        - initial-scale=1.0: Zoom inicial padrão (sem zoom)
+        - ESSENCIAL para responsividade em celulares/tablets
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 
+        Link para o CSS externo:
+        - href="css/default.css": Caminho relativo para o arquivo de estilos
+        - Boa prática: Separar estrutura (HTML) do estilo (CSS)
+    -->
+    <link rel="stylesheet" href="css/default.css">
+</head>
+
+<!-- ============================================
+     FIM DO CABEÇALHO | INÍCIO DO CORPO (BODY)
+     ============================================ -->
+
+<body>
+    <!-- 
+        CORPO DA PÁGINA: Todo conteúdo visível fica aqui dentro
+        - O CSS aplicado definirá layout, cores, fontes, etc.
+    -->
+
+    <!-- ============================================
+         ELEMENTO 1: IMAGEM
+         ============================================ -->
+    
+    <!-- 
+        Tag <img>: Insere uma imagem na página
+        - class="imagem": Aplica os estilos definidos no CSS (borda, sombra, hover)
+        - src: Caminho relativo para o arquivo da imagem
+        - alt: Texto alternativo (ACESSIBILIDADE)
+          * Essencial para leitores de tela
+          * Aparece se a imagem não carregar
+          * Melhora SEO
+        - OBS: O texto "nao funcionou " está incorreto no alt (corrigido abaixo)
+    -->
+    <img class="imagem" 
+         src="imagens e videos/Aug-Wire-MRU-79b512d732930429c772.jpg" 
+         alt="Wireframe ou diagrama técnico - conteúdo não disponível">
+    
+    <!-- 
+        <br>: Quebra de linha simples (espaçamento entre elementos)
+        - Uso básico, mas no CSS temos 'gap: 20px' no body para espaçamento consistente
+    -->
+    <br>
+    
+    <!-- ============================================
+         ELEMENTO 2: VÍDEO
+         ============================================ -->
+    
+    <!-- 
+        Tag <video>: Insere um player de vídeo nativo
+        - class="video-xbox": Estilização personalizada (bordas, sombras, hover verde)
+        - controls: Exibe os controles padrão (play, pause, volume, tela cheia)
+          * Essencial para o usuário controlar a reprodução
+        
+        ESTRUTURA:
+        - <source>: Define o arquivo de vídeo
+          * src: Caminho do arquivo
+          * type: MIME type do arquivo (ajuda o navegador a identificar o formato)
+        - Pode ter múltiplas <source> para diferentes formatos (fallback)
+    -->
+    <video class="video-xbox" controls>
+        <source src="imagens e videos/pragmata.mp4" type="video/mp4">
+        <!-- 
+            Texto de fallback: Aparece se o navegador não suportar a tag <video>
+            - Exibe para navegadores muito antigos
+        -->
+        <p>Seu navegador não suporta a tag de vídeo.</p>
+    </video>
+    
+    <!-- ============================================
+         ELEMENTO 3: ÁUDIO
+         ============================================ -->
+    
+    <!-- 
+        Tag <audio>: Insere um player de áudio nativo
+        - class="audio-xbox": Estilização com filtros CSS (inversão de cores e efeitos)
+        - controls: Exibe controles de reprodução (play, pause, volume, progresso)
+        
+        OBSERVAÇÃO IMPORTANTE:
+        - O nome do arquivo é muito longo e contém caracteres especiais
+        - Recomendado renomear para algo como "surpresa-videogame.mp3"
+    -->
+    <audio controls class="audio-xbox">
+        <source src="imagens e videos/A SURPRESINHA QUE ESTAVA DENTRO DO VIDEOGAME  ANDRÉ E GIL - TANTU'S GAMES - Cortes Podcast 3 Irmãos [OFICIAL].mp3" 
+                type="audio/mp3">
+        <!-- Fallback para navegadores sem suporte -->
+        <p>>Seu navegador não suporta a tag de áudio.</p>
+    </audio>
+    
+    <!-- ============================================
+         ELEMENTO 4: LINK
+         ============================================ -->
+    
+    <!-- 
+        Tag <a>: Âncora (hyperlink) para navegação
+        - class="link-xbox": Estilização com hover, cor e transição
+        - href: URL de destino (site oficial da Xbox Brasil)
+        - alt: Atributo INVÁLIDO para tag <a> (só funciona em <img>)
+          * CORRETO: Usar title para tooltip ou texto descritivo dentro da tag
+        
+        SEGURANÇA:
+        - Para links externos, boas práticas recomendam target="_blank" + rel="noopener noreferrer"
+        - Exemplo: target="_blank" rel="noopener noreferrer"
+    -->
+    <a class="link-xbox" 
+      target="_blank" href="https://www.xbox.com/pt-BR/" 
+       title="Visite o site oficial do Xbox Brasil">
+        Visite o site do XBOX
+    </a>
+    
+    <!-- 
+        OBSERVAÇÕES E MELHORIAS SUGERIDAS:
+        
+        1. NOMES DE ARQUIVOS:
+           - Evitar espaços e caracteres especiais nos nomes
+           - Usar hífens ou underline: "surpresa-videogame.mp3"
+        
+        2. ACESSIBILIDADE:
+           - Adicionar aria-label em elementos interativos
+           - Melhorar o texto alternativo das imagens
+        
+        3. ESTRUTURA SEMÂNTICA:
+           - Usar <main> para conteúdo principal
+           - Adicionar <header> e <footer> se necessário
+        
+        4. PERFORMANCE:
+           - Otimizar tamanho das imagens/vídeos
+           - Adicionar lazy loading: loading="lazy" nas imagens
+    -->
+    
+</body>
+
+<!-- ============================================
+     FIM DO CORPO (BODY)
+     ============================================ -->
+
+</html>
+<!-- 
+    FIM DO DOCUMENTO HTML
+    
+    ESTRUTURA COMPLETA:
+    - DOCTYPE
+    - html (raiz)
+      - head (metadados)
+        - meta charset
+        - title
+        - meta viewport
+        - link CSS
+      - body (conteúdo visível)
+        - imagem
+        - vídeo
+        - áudio
+        - link
+-->
+
+<!-- 
+    ============================================
+    ANÁLISE DE MELHORIAS RECOMENDADAS:
+    ============================================
+    
+    1. HTML SEMÂNTICO:
+       <main>
+           <section class="conteudo-principal">
+               <img ...>
+               <video ...>
+               <audio ...>
+           </section>
+           <footer>
+               <a ...>
+           </footer>
+       </main>
+    
+    2. ACESSIBILIDADE (WCAG):
+       - Adicionar aria-hidden="true" em elementos decorativos
+       - Garantir contraste de cores suficiente
+       - Adicionar skip-link para navegação por teclado
+    
+    3. SEO:
+       - Adicionar meta description
+       - Adicionar meta keywords
+       - Estruturar com headings (h1, h2, etc.)
+    
+    4. PERFORMANCE:
+       - <img loading="lazy" ...> para carregar imagem sob demanda
+       - <video preload="metadata" ...> para não carregar vídeo inteiro
+       - <audio preload="none" ...> para não carregar áudio sem necessidade
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
