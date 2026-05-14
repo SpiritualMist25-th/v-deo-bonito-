@@ -1,0 +1,197 @@
+/* ============================================
+   IMPORTAÇÃO DE FONTES EXTERNAS
+   ============================================ */
+   
+/* Importa a fonte 'Inter' do Google Fonts com os pesos 400 (normal) e 700 (negrito) */
+/* display=swap garante que o texto apareça rapidamente com uma fonte fallback */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* ============================================
+   VARIÁVEIS GLOBAIS (TEMA XBOX)
+   ============================================ */
+   
+/* :root é o elemento raiz do documento - ideal para variáveis globais */
+:root {
+    --xbox-green: #107c10;        /* Verde principal da Xbox */
+    --xbox-dark-green: #0e630e;   /* Verde mais escuro (hover/sombra) */
+    --xbox-black: #000000;        /* Preto puro */
+    --xbox-grey: #1a1a1a;         /* Cinza escuro (fundo/detalhes) */
+    --xbox-white: #ffffff;        /* Branco (textos/destaques) */
+}
+
+/* ============================================
+   RESET GLOBAL
+   ============================================ */
+   
+/* Remove margens, paddings padrão e ajusta o modelo de caixa para todos os elementos */
+* {
+    margin: 0;           /* Remove margem padrão dos navegadores */
+    padding: 0;          /* Remove preenchimento padrão */
+    box-sizing: border-box; /* Faz width/height incluírem padding e borda */
+}
+
+/* ============================================
+   ESTILO PRINCIPAL DO BODY
+   ============================================ */
+   
+body {
+    /* === CONFIGURAÇÕES DE LAYOUT (FLEXBOX) === */
+    display: flex;              /* Ativa o Flexbox no container pai */
+    flex-direction: column;    /* Empilha os elementos verticalmente (um abaixo do outro) */
+    justify-content: center;   /* Centraliza os itens na horizontal (eixo principal) */
+    align-items: center;       /* Centraliza os itens na vertical (eixo cruzado) */
+    min-height: 100vh;         /* Altura mínima igual à tela inteira (centralização vertical) */
+    gap: 20px;                 /* Espaçamento automático de 20px entre elementos filhos */
+    
+    /* === ESTILO VISUAL XBOX === */
+    background-color: #050505; /* Fundo preto queimado (estilo escuro Xbox) */
+    color: white;              /* Texto branco padrão */
+    font-family: 'Inter', sans-serif; /* Fonte moderna e limpa */
+    margin: 0;                 /* Remove margem padrão (reforço) */
+}
+
+/* ============================================
+   ESTILO DO TÍTULO PRINCIPAL
+   ============================================ */
+   
+h1 {
+    border-left: 5px solid #107c10;  /* Borda lateral esquerda na cor verde Xbox */
+    padding-left: 15px;              /* Espaçamento interno para não encostar na borda */
+    text-transform: uppercase;       /* Transforma o texto em MAIÚSCULAS */
+    letter-spacing: 1px;             /* Pequeno espaçamento entre letras (efeito moderno) */
+}
+
+/* ============================================
+   ESTILO DO RODAPÉ
+   ============================================ */
+   
+footer {
+    text-align: center;          /* Centraliza o texto */
+    padding: 40px;               /* Espaçamento interno de 40px em todos os lados */
+    border-top: 1px solid #334155; /* Linha separadora superior (cinza azulado discreto) */
+    margin-top: 50px;            /* Distância de 50px em relação ao elemento acima */
+}
+
+/* ============================================
+   ESTILO DA CLASSE .IMAGEM
+   ============================================ */
+   
+.imagem {
+    width: 40%;                  /* Largura de 25% do container pai */
+    height: 40%;                /* Altura de 25% do container pai */
+    object-fit: cover;          /* Ajusta a imagem sem distorcer (corta o excesso se necessário) */
+    border-radius: 8px;         /* Cantos levemente arredondados */
+    border: 3px solid transparent; /* Borda transparente (evita "pulo" visual no hover) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra sutil para profundidade */
+    cursor: pointer;            /* Muda o cursor para "mãozinha" indicando interatividade */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Animações suaves */
+}
+
+/* ============================================
+   EFEITO HOVER DA CLASSE .IMAGEM
+   ============================================ */
+   
+.imagem:hover {
+    transform: scale(1.05);      /* Aumenta a imagem em 5% no hover */
+    border-color: #ffffff;       /* Borda branca aparece no hover (destaque) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Sombra mais forte no hover */
+}
+
+/* ============================================
+   ESTILO DO VÍDEO (CLASSE .VIDEO-XBOX)
+   ============================================ */
+   
+.video-xbox {
+    width: 100%;                 /* Ocupa 100% da largura do container pai */
+    max-width: 800px;            /* Limite máximo de 800px (não fica gigante em telas grandes) */
+    aspect-ratio: 16 / 9;        /* Mantém proporção 16:9 (padrão widescreen) */
+    border-radius: 12px;         /* Cantos mais arredondados que a imagem */
+    border: 3px solid #1a1a1a;  /* Borda cinza escuro */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra forte para destaque */
+    transition: all 0.3s ease;   /* Transição suave para todas as propriedades */
+    outline: none;               /* Remove o contorno padrão de foco */
+}
+
+/* ============================================
+   EFEITO HOVER E FOCUS DO VÍDEO
+   ============================================ */
+   
+.video-xbox:hover,
+.video-xbox:focus {
+    transform: scale(1.02);      /* Aumenta 2% no hover/foco */
+    border-color: #107c10;       /* Borda muda para o verde Xbox */
+    box-shadow: 0 0 20px rgba(16, 124, 16, 0.4); /* Sombra com brilho verde */
+}
+
+/* ============================================
+   ESTILO DO LINK (CLASSE .LINK-XBOX)
+   ============================================ */
+   
+.link-xbox {
+    color: #b3b3b3;              /* Cor cinza claro (padrão Xbox para não focados) */
+    text-decoration: none;       /* Remove o sublinhado padrão dos links */
+    font-family: 'Inter', sans-serif; /* Garante a fonte padrão */
+    font-weight: 600;            /* Peso semi-negrito (mais destaque que o normal) */
+    font-size: 1.1rem;           /* Tamanho da fonte levemente maior (1.1x o padrão) */
+    padding: 10px 20px;          /* Espaçamento interno: 10px vertical / 20px horizontal */
+    border-radius: 5px;          /* Cantos levemente arredondados */
+    transition: all 0.2s ease-in-out; /* Transição suave e rápida */
+    display: inline-block;       /* Permite aplicar padding e transformações hover */
+}
+
+/* ============================================
+   ESTILO DO PLAYER DE ÁUDIO (CLASSE .AUDIO-XBOX)
+   ============================================ */
+   
+.audio-xbox {
+    width: 300px;                /* Largura fixa de 300px */
+    height: 50px;                /* Altura fixa de 50px */
+    background-color: #0787f0;   /* Fundo azul (base para o efeito de filtro) */
+    border-radius: 25px;         /* Cantos completamente arredondados (efeito cápsula) */
+    padding: 5px;                /* Espaçamento interno de 5px */
+    border: 2px solid #00a2ff;   /* Borda azul vibrante */
+    box-shadow: 0 8px 20px rgb(0, 119, 255); /* Sombra azul forte */
+    
+    /* TRUQUE: Filtros CSS para alterar a cor do player nativo */
+    /* invert(100%) - inverte as cores */
+    /* hue-rotate(90deg) - rotaciona o matiz em 90 graus */
+    /* brightness(0.8) - reduz o brilho em 20% */
+    /* contrast(1.2) - aumenta o contraste em 20% */
+    filter: invert(100%) hue-rotate(90deg) brightness(0.8) contrast(1.2);
+    
+    transition: all 0.3s ease;   /* Transição suave para hover */
+    outline: none;               /* Remove contorno padrão do foco */
+}
+
+/* ============================================
+   EFEITO HOVER DO PLAYER DE ÁUDIO
+   ============================================ */
+   
+.audio-xbox:hover {
+    transform: scale(1.03);      /* Aumenta 3% no hover */
+    box-shadow: 0 0 15px rgba(7, 107, 238, 0.5); /* Mudança para brilho azul */
+    border-color: #077be7;       /* Borda com tom azul mais vibrante */
+}
+
+/* ============================================
+   MEDIA QUERY - RESPONSIVIDADE
+   ============================================ */
+   
+/* Quando a largura da tela for MENOR ou IGUAL a 800px (tablets e celulares) */
+@media (max-width: 800px) {
+    
+    /* Altera o layout do elemento <main> (que teria grid no HTML) */
+    main {
+        grid-template-columns: 1fr; /* Grid vira uma única coluna (layout empilhado) */
+    }
+    
+    /* Altera a direção do flexbox para coluna */
+    .aside-com-imagem {
+        flex-direction: column; /* Em telas pequenas, imagem fica em cima do texto */
+    }
+    
+    /* Ajusta a largura da imagem para 100% no celular */
+    .aside-com-imagem img {
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+}
